@@ -1,13 +1,16 @@
 
+/*seg_basic.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {}
-	u.version = 6;
+	u.version = 0.6;
 	u.bug = function() {}
 	u.stats = new function() {this.pageView = function(){};this.event = function(){};this.customVar = function(){}}
 }
 
+/*ga.js*/
 u.ga_account = 'UA-31194910-1';
 
+/*u-googleanalytics.js*/
 if(u.ga_account) {
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', u.ga_account]);

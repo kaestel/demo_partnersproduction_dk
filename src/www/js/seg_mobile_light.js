@@ -1,7 +1,8 @@
 
+/*seg_mobile_light.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {}
-	u.version = 6;
+	u.version = 0.6;
 	u.bug = function() {}
 	u.stats = new function() {this.pageView = function(){};this.event = function(){};this.customVar = function(){}}
 }
@@ -469,8 +470,8 @@ Util.Events = u.e = new function() {
 	this._inputStart = function(event) {
 		this.event_var = event;
 		this.input_timestamp = event.timeStamp;
-		this.start_event_x = u.eventX(event);
-		this.start_event_y = u.eventY(event);
+		this.start_event_x = u.eventX(event) - u.scrollX();
+		this.start_event_y = u.eventY(event) - u.scrollY();
 		this.current_xps = 0;
 		this.current_yps = 0;
 		this.swiped = false;
@@ -798,6 +799,13 @@ Util.Form = u.f = new function() {
 					this.validate(field.iN);
 					u.e.addEvent(field.iN, "keyup", this._update);
 					u.e.addEvent(field.iN, "change", this._changed);
+				}
+			}
+			if(typeof(this.customInit) == "object") {
+				for(type in this.customInit) {
+					if(field.className.match(type)) {
+						this.customInit[type](field);
+					}
 				}
 			}
 		}
@@ -3062,8 +3070,10 @@ if(String.prototype.substr == undefined || "ABC".substr(-1,1) == "A") {
 	};
 }
 
+/*ga.js*/
 u.ga_account = 'UA-31194910-1';
 
+/*u-googleanalytics.js*/
 if(u.ga_account) {
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', u.ga_account]);
