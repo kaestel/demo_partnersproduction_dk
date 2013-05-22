@@ -21,7 +21,8 @@
 </head>
 
 <body>
-
+	quick test
+	
 <div id="page" class="i:page">
 
 	<div id="header">
