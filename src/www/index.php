@@ -50,9 +50,9 @@
 				<div class="cell">
 					<div class="vcard company" itemscope itemtype="http://schema.org/Organization">
 						<div class="column">
-							<p class="job">
+							<!--p class="job">
 								Vi søger lige nu en praktikant til jobbet som klippe- og research assistent. Læs mere <a href="/media/pdf/WDP_Praktikant.pdf" target="_blank">her</a>.
-							</p>
+							</p-->
 							<div class="name fn org" itemprop="name">Partners Production</div>
 							<div class="adr" itemprop="address" itemscope itemtype="http://schema.org/Address">
 								<div class="street-address" itemprop="street-address">Vester Farimagsgade 41</div>
